@@ -106,6 +106,13 @@ aws s3 sync --delete [Source] [Target]
 aws s3 presign s3://[Bucket_Name]/[File_Name] --expires-in 120
 ```
 
+### S3 버킷 테스트
+![S3 Test](images/s3_test.png)
+
+### Presigned URL 테스트
+![Presigned URL Test](images/presigned_test.png)
+
+
 ## 7. 결론 및 배운 점 (Key Takeaways)
 
 1. 스토리지 적재적소 활용: EBS(부팅/I/O), EFS(공유), S3(백업/대용량)
