@@ -22,24 +22,24 @@ UDP 트래픽 분산을 실습 및 검증
 
 ``` mermaid
 graph TD
-    User(Client/User) -->|Internet| IGW(Internet Gateway)
-    IGW --> ALB(ALB: HTTP 80)
-    IGW --> NLB(NLB: UDP 161)
+    User[Client / User] -->|Internet| IGW[Internet Gateway]
+    IGW --> ALB[ALB: HTTP 80]
+    IGW --> NLB[NLB: UDP 161]
 
-    subgraph VPC [AWS Cloud (VPC)]
-        ALB -->|Round Robin| TG_Web[Target Group: Web Servers]
-        NLB -->|Hash Flow| TG_SNMP[Target Group: SNMP Agents]
+    subgraph VPC[AWS Cloud VPC]
+        ALB -->|Round Robin| TGWeb[Target Group - Web Servers]
+        NLB -->|Hash Flow| TGSNMP[Target Group - SNMP Agents]
 
-        subgraph AZ_A [Availability Zone A]
-            TG_Web --> Server1
-            TG_SNMP --> Server1
+        subgraph AZA[AZ A]
+            TGWeb --> Server1
+            TGSNMP --> Server1
         end
 
-        subgraph AZ_C [Availability Zone C]
-            TG_Web --> Server2
-            TG_Web --> Server3
-            TG_SNMP --> Server2
-            TG_SNMP --> Server3
+        subgraph AZC[AZ C]
+            TGWeb --> Server2
+            TGWeb --> Server3
+            TGSNMP --> Server2
+            TGSNMP --> Server3
         end
     end
 ```
