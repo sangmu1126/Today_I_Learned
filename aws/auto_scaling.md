@@ -25,7 +25,7 @@
 
 부하 테스트 전, ALB를 통해 접속했을 때 단일 인스턴스가 응답하는 것을 확인했습니다.
 
-![Initial CPU State](images/cpu_before.jpg)
+![Initial CPU State](images/cpu_before.png)
 
 ```bash
 curl $ALB
@@ -54,7 +54,7 @@ stress-ng --cpu 2 --io 1 --vm 2 --vm-bytes 256M --timeout 300s
 
 ### 2. 실시간 모니터링 (htop)
 
-![CPU 100% Load](images/cpu_100%.jpg)
+![CPU 100% Load](images/cpu_100%.png)
 
 * CPU 사용률이 **100%** 도달한 것을 확인.
 * `stress-ng` 프로세스가 상위 점유.
