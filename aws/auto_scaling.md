@@ -54,7 +54,7 @@ stress-ng --cpu 2 --io 1 --vm 2 --vm-bytes 256M --timeout 300s
 
 ### 2. 실시간 모니터링 (htop)
 
-![CPU 100% Load](images/cpu_100%.png)
+![CPU 100% Load](images/cpu_overload.png)
 
 * CPU 사용률이 **100%** 도달한 것을 확인.
 * `stress-ng` 프로세스가 상위 점유.
