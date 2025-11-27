@@ -25,6 +25,8 @@
 
 부하 테스트 전, ALB를 통해 접속했을 때 단일 인스턴스가 응답하는 것을 확인했습니다.
 
+![Initial CPU State](images/cpu_before.jpg)
+
 ```bash
 curl $ALB
 ```
@@ -52,6 +54,8 @@ stress-ng --cpu 2 --io 1 --vm 2 --vm-bytes 256M --timeout 300s
 
 ### 2. 실시간 모니터링 (htop)
 
+![CPU 100% Load](images/cpu_100%.jpg)
+
 * CPU 사용률이 **100%** 도달한 것을 확인.
 * `stress-ng` 프로세스가 상위 점유.
 
@@ -67,6 +71,8 @@ ab -n 500 -c 1 http://$ALB/load.php
 
 CPU 사용률이 정책 기준(예: CPU 80%)을 초과하여 CloudWatch Alarm이 **InAlarm** 상태로 전환되었습니다.
 
+![CloudWatch Alarm Triggered](images/cloudwatch.png)
+
 CloudWatch 주요 변화:
 
 * **CPUUtilization 그래프**: 100% 근접.
@@ -77,6 +83,8 @@ CloudWatch 주요 변화:
 ## ✅ Step 4: Scale-Out 결과 검증 (Verification)
 
 Client 서버에서 ALB로 지속 요청을 보내 인스턴스 분산 여부를 확인했습니다.
+
+![ASG + ALB Traffic Distribution](images/as_alb.png)
 
 예시 응답 로그:
 
