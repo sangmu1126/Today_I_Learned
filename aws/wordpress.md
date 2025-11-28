@@ -125,12 +125,12 @@ systemctl restart httpd
 graph TD
     User((User)) -->|HTTP Request| Internet
     subgraph VPC [AWS VPC]
-        subgraph Public Subnet
-            EC2[Web Server Instance (Stateless)]
+        subgraph Public_Subnet
+            EC2[Web Server Instance - Stateless]
         end
         
-        subgraph Private Subnet / Services
-            EFS[Elastic File System (Shared Storage)]
+        subgraph Private_Subnet_Services
+            EFS[Elastic File System - Shared Storage]
             RDS[(Amazon RDS MySQL 8.0)]
         end
 
