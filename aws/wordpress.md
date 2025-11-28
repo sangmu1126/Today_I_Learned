@@ -126,12 +126,12 @@ graph TD
     User((User)) -->|HTTP Request| Internet
     subgraph VPC [AWS VPC]
         subgraph Public Subnet
-            EC2[Web Server Instance<br/>(Stateless)]
+            EC2[Web Server Instance (Stateless)]
         end
         
         subgraph Private Subnet / Services
-            EFS[Elastic File System<br/>(Shared Storage)]
-            RDS[(Amazon RDS<br/>MySQL 8.0)]
+            EFS[Elastic File System (Shared Storage)]
+            RDS[(Amazon RDS MySQL 8.0)]
         end
 
         EC2 -->|NFS Mount /var/www/wordpress| EFS
