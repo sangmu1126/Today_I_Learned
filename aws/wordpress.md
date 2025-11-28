@@ -128,7 +128,7 @@ systemctl restart httpd
    ![WordPress Dashboard](images/wordpress_start.png)
 
 3. **블로그 포스팅 테스트 (이미지 업로드 확인)**
-   ![WordPress Blog Post](images/wordpress_first.jpg)
+   ![WordPress Blog Post](images/wordpress_first.png)
 
 ---
 
