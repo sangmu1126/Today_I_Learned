@@ -32,6 +32,8 @@ graph TD
     Apache --> PHP
     PHP --> LocalDB
     PHP --> LocalFS
+```
+
 🛠️ Step 1: LAMP Stack 설치
 1. Apache Web Server 설치
 웹 서버를 설치하고 구동합니다.
