@@ -53,7 +53,7 @@ curl http://localhost
 ```
 
 **[결과 확인] Apache 테스트 페이지 접속**
-![Apache Test Page](wordpress_test.png)
+![Apache Test Page](images/wordpress_test.png)
 
 
 
@@ -72,7 +72,7 @@ systemctl restart php-fpm && systemctl restart httpd
 ```
 
 **[결과 확인] PHP Info 페이지**
-![PHP Info](wordpress_info.png)
+![PHP Info](images/wordpress_info.png)
 
 ### 3. Local MariaDB 설치 및 설정
 
@@ -122,13 +122,13 @@ systemctl restart httpd
 **[초기 구축 결과]**
 
 1. **워드프레스 설치 화면 (초기 접속)**
-   ![WordPress Install](wordpress_init.png)
+   ![WordPress Install](images/wordpress_init.png)
 
 2. **워드프레스 대시보드 (설치 완료)**
-   ![WordPress Dashboard](wordpress_start.png)
+   ![WordPress Dashboard](images/wordpress_start.png)
 
 3. **블로그 포스팅 테스트 (이미지 업로드 확인)**
-   ![WordPress Blog Post](wordpress_first.jpg)
+   ![WordPress Blog Post](images/wordpress_first.jpg)
 
 ---
 
@@ -251,7 +251,7 @@ mysql -h $RDS -uroot -pqwe12345 -e 'show databases;'
 - Result: **정상 접속 (대시보드 활성화)**
 
 **[최종 결과] 분산 아키텍처 환경에서의 대시보드 접속 화면**
-![WordPress Dashboard on Hybrid Architecture](wordpress_multi_test.png)
+![WordPress Dashboard on Hybrid Architecture](images/wordpress_multi_test.png)
 
 
 # 🚀 Conclusion
