@@ -52,6 +52,11 @@ httpd -v
 curl http://localhost
 ```
 
+**[결과 확인] Apache 테스트 페이지 접속**
+![Apache Test Page](wordpress_test.png)
+
+
+
 ### 2. PHP 8.2 및 Imagick 설치  
 워드프레스 구동 및 이미지 처리를 위한 모듈을 설치합니다.
 
@@ -65,6 +70,9 @@ echo "extension=imagick.so" > /etc/php.d/40-imgick.ini
 
 systemctl restart php-fpm && systemctl restart httpd
 ```
+
+**[결과 확인] PHP Info 페이지**
+![PHP Info](wordpress_info.png)
 
 ### 3. Local MariaDB 설치 및 설정
 
@@ -111,7 +119,16 @@ find /var/www -type f -exec chmod 0664 {} \;
 systemctl restart httpd
 ```
 
-초기 구축 결과:
+**[초기 구축 결과]**
+
+1. **워드프레스 설치 화면 (초기 접속)**
+   ![WordPress Install](wordpress_init.png)
+
+2. **워드프레스 대시보드 (설치 완료)**
+   ![WordPress Dashboard](wordpress_start.png)
+
+3. **블로그 포스팅 테스트 (이미지 업로드 확인)**
+   ![WordPress Blog Post](wordpress_first.jpg)
 
 ---
 
@@ -232,6 +249,10 @@ mysql -h $RDS -uroot -pqwe12345 -e 'show databases;'
 
 - URL: **http://54.180.150.186/wp-admin/**
 - Result: **정상 접속 (대시보드 활성화)**
+
+**[최종 결과] 분산 아키텍처 환경에서의 대시보드 접속 화면**
+![WordPress Dashboard on Hybrid Architecture](wordpress_multi_test.png)
+
 
 # 🚀 Conclusion
 
